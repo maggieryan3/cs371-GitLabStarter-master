@@ -134,7 +134,10 @@ public class TextModActivity extends ActionBarActivity {
         public void onItemSelected(AdapterView<?> parentView, View selectedItemView,
                                    int position, long id) {
             // set the image to the one corresponding to the index selected by the spinner
+            Spinner mySpinner = (Spinner)parentView;
             imageView.setImageBitmap(images.get(position));
+            String text = (String)mySpinner.getSelectedItem();
+            editText.setText(editText.getText() + text);
         }
 
         /**
@@ -144,6 +147,7 @@ public class TextModActivity extends ActionBarActivity {
         @Override
         public void onNothingSelected(AdapterView<?> parentView) {
             // your code here
+
         }
     }
 }
