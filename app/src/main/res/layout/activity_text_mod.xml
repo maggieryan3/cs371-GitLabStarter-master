@@ -79,8 +79,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/upper_button_text"
-            android:id="@+id/upper"
+            android:text="RS"
+            android:id="@+id/rs"
             android:textSize="@dimen/button_font_size"
             android:textColor="@color/button_text_color"
             android:background="@color/button_color" />
@@ -93,8 +93,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/lower_button_text"
-            android:id="@+id/lower"
+            android:text="RP"
+            android:id="@+id/rp"
             android:textSize="@dimen/button_font_size"
             android:textColor="@color/button_text_color"
             android:background="@color/button_color" />
