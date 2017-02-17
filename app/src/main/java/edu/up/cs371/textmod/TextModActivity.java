@@ -162,10 +162,9 @@ public class TextModActivity extends ActionBarActivity {
 
             if(buttonSelection == R.id.copyName)
             {
-                String text = textView.getText() + (String)spinner.getSelectedItem();
-                textView.setText(text);
+                String text = editText.getText() + (String)spinner.getSelectedItem();
+                editText.setText(text);
             }
-
         }
 
     }
