@@ -51,7 +51,13 @@ public class TextModActivity extends ActionBarActivity {
 
         // set instance variables for our widgets
         imageView = (ImageView)findViewById(R.id.imageView);
-
+        textView = (TextView)findViewById(R.id.textView);
+        editText = (EditText)findViewById(R.id.editText);
+        button1 = (Button)findViewById(R.id.button1);
+        button2 = (Button)findViewById(R.id.button2);
+        button3 = (Button)findViewById(R.id.button3);
+        button4 = (Button)findViewById(R.id.button4);
+        button5 = (Button)findViewById(R.id.button5);
 
         // Set up the spinner so that it shows the names in the spinner array resources
         //
