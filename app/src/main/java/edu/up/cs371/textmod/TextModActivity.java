@@ -169,7 +169,7 @@ TextModActivity extends ActionBarActivity {
 
             if(buttonSelection == R.id.clear)
             {
-                editText.setText(" ");
+                editText.setText("       ");
             }
 
 
