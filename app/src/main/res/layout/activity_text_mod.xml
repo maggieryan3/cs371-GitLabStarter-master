@@ -66,7 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/clear_button_text"
-            android:id="@+id/button1"
+            android:id="@+id/clear"
             android:textSize="@dimen/button_font_size"
             android:textColor="@color/button_text_color"
             android:background="@color/button_color" />
@@ -80,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/upper_button_text"
-            android:id="@+id/button2"
+            android:id="@+id/upper"
             android:textSize="@dimen/button_font_size"
             android:textColor="@color/button_text_color"
             android:background="@color/button_color" />
@@ -94,7 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/lower_button_text"
-            android:id="@+id/button3"
+            android:id="@+id/lower"
             android:textSize="@dimen/button_font_size"
             android:textColor="@color/button_text_color"
             android:background="@color/button_color" />
@@ -108,7 +108,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/reverse_button_text"
-            android:id="@+id/button4"
+            android:id="@+id/reverse"
             android:textSize="@dimen/button_font_size"
             android:textColor="@color/button_text_color"
             android:background="@color/button_color" />
@@ -122,10 +122,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/copy_name_button_text"
-            android:id="@+id/button5"
+            android:id="@+id/copyName"
             android:textSize="@dimen/button_font_size"
             android:textColor="@color/button_text_color"
-            android:background="@color/button_color" />
+            android:background="@color/button_color"
+            android:clickable="true" />
 
         <Space
             android:layout_width="0sp"
@@ -194,6 +195,12 @@
         android:layout_width="match_parent"
         android:layout_height="0sp"
         android:layout_weight="1"/>
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New ToggleButton"
+        android:id="@+id/toggleButton" />
 
 
 </LinearLayout>

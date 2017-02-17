@@ -33,11 +33,12 @@ public class TextModActivity extends ActionBarActivity {
     private ImageView imageView; // the view that shows the image
     private TextView textView;
     private EditText editText;
-    private Button button1;
-    private Button button2;
-    private Button button3;
-    private Button button4;
-    private Button button5;
+    private Button clear;
+    private Button upper;
+    private Button lower;
+    private Button reverse;
+    private Button copyName;
+    private Spinner spinner;
 
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -53,16 +54,20 @@ public class TextModActivity extends ActionBarActivity {
         imageView = (ImageView)findViewById(R.id.imageView);
         textView = (TextView)findViewById(R.id.textView);
         editText = (EditText)findViewById(R.id.editText);
-        button1 = (Button)findViewById(R.id.button1);
-        button2 = (Button)findViewById(R.id.button2);
-        button3 = (Button)findViewById(R.id.button3);
-        button4 = (Button)findViewById(R.id.button4);
-        button5 = (Button)findViewById(R.id.button5);
+        clear = (Button)findViewById(R.id.clear);
+        upper = (Button)findViewById(R.id.upper);
+        lower = (Button)findViewById(R.id.lower);
+        reverse = (Button)findViewById(R.id.reverse);
+        copyName = (Button)findViewById(R.id.copyName);
+        spinner = (Spinner)findViewById(R.id.spinner);
+
+        clear.setOnClickListener(new ButtonListener());
+        copyName.setOnClickListener(new ButtonListener());
 
         // Set up the spinner so that it shows the names in the spinner array resources
         //
         // get spinner object
-        Spinner spinner = (Spinner)findViewById(R.id.spinner);
+        //Spinner spinner = (Spinner)findViewById(R.id.spinner);
         // get array of strings
         String[] spinnerNames = getResources().getStringArray(R.array.spinner_names);
         // create adapter with the strings
@@ -136,8 +141,6 @@ public class TextModActivity extends ActionBarActivity {
             // set the image to the one corresponding to the index selected by the spinner
             Spinner mySpinner = (Spinner)parentView;
             imageView.setImageBitmap(images.get(position));
-            String text = (String)mySpinner.getSelectedItem();
-            editText.setText(editText.getText() + text);
         }
 
         /**
@@ -149,5 +152,21 @@ public class TextModActivity extends ActionBarActivity {
             // your code here
 
         }
+    }
+
+    private class ButtonListener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+
+            int buttonSelection = view.getId();
+
+            if(buttonSelection == R.id.copyName)
+            {
+                String text = textView.getText() + (String)spinner.getSelectedItem();
+                textView.setText(text);
+            }
+
+        }
+
     }
 }
