@@ -24,7 +24,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class TextModActivity extends ActionBarActivity {
+public class
+TextModActivity extends ActionBarActivity {
 
     // array-list that contains our images to display
     private ArrayList<Bitmap> images;
@@ -162,9 +163,17 @@ public class TextModActivity extends ActionBarActivity {
 
             if(buttonSelection == R.id.copyName)
             {
-                String text = editText.getText() + (String)spinner.getSelectedItem();
-                editText.setText(text);
+                String text = textView.getText() + (String)spinner.getSelectedItem();
+                textView.setText(text);
             }
+
+            if(buttonSelection == R.id.clear)
+            {
+                editText.setText(" ");
+            }
+
+
+
         }
 
     }
