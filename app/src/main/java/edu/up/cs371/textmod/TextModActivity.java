@@ -35,8 +35,8 @@ TextModActivity extends ActionBarActivity {
     private TextView textView;
     private EditText editText;
     private Button clear;
-    private Button upper;
-    private Button lower;
+    private Button rs;
+    private Button rp;
     private Button reverse;
     private Button copyName;
     private Spinner spinner;
@@ -56,14 +56,16 @@ TextModActivity extends ActionBarActivity {
         textView = (TextView)findViewById(R.id.textView);
         editText = (EditText)findViewById(R.id.editText);
         clear = (Button)findViewById(R.id.clear);
-        upper = (Button)findViewById(R.id.upper);
-        lower = (Button)findViewById(R.id.lower);
+        rs = (Button)findViewById(R.id.rs);
+        rp = (Button)findViewById(R.id.rp);
         reverse = (Button)findViewById(R.id.reverse);
         copyName = (Button)findViewById(R.id.copyName);
         spinner = (Spinner)findViewById(R.id.spinner);
 
         clear.setOnClickListener(new ButtonListener());
         copyName.setOnClickListener(new ButtonListener());
+        rp.setOnClickListener(new ButtonListener());
+        rs.setOnClickListener(new ButtonListener());
 
         // Set up the spinner so that it shows the names in the spinner array resources
         //
@@ -163,8 +165,8 @@ TextModActivity extends ActionBarActivity {
 
             if(buttonSelection == R.id.copyName)
             {
-                String text = textView.getText() + (String)spinner.getSelectedItem();
-                textView.setText(text);
+                String text = editText.getText() + (String)spinner.getSelectedItem();
+                editText.setText(text);
             }
 
             if(buttonSelection == R.id.clear)
@@ -172,9 +174,20 @@ TextModActivity extends ActionBarActivity {
                 editText.setText("       ");
             }
 
+            if(buttonSelection == R.id.rp)
+            {
+                String text = editText.getText() + "";
+                String words = text.replace(".","");
+                words = words.replace(",","");
+                editText.setText(words);
+            }
 
-
+            if(buttonSelection == R.id.rs)
+            {
+                String text = editText.getText() + "";
+                String words = text.replace(" ","");
+                editText.setText(words);
+            }
         }
-
     }
 }
