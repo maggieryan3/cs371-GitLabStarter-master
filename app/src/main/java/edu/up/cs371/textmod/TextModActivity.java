@@ -35,7 +35,7 @@ TextModActivity extends ActionBarActivity {
     private TextView textView;
     private EditText editText;
     private Button clear;
-    private Button upper;
+    private Button altnernate;
     private Button lower;
     private Button reverse;
     private Button copyName;
@@ -56,7 +56,7 @@ TextModActivity extends ActionBarActivity {
         textView = (TextView)findViewById(R.id.textView);
         editText = (EditText)findViewById(R.id.editText);
         clear = (Button)findViewById(R.id.clear);
-        upper = (Button)findViewById(R.id.upper);
+        altnernate = (Button)findViewById(R.id.Alternate);
         lower = (Button)findViewById(R.id.lower);
         reverse = (Button)findViewById(R.id.reverse);
         copyName = (Button)findViewById(R.id.copyName);
@@ -64,6 +64,7 @@ TextModActivity extends ActionBarActivity {
 
         clear.setOnClickListener(new ButtonListener());
         copyName.setOnClickListener(new ButtonListener());
+        altnernate.setOnClickListener(new ButtonListener());
 
         // Set up the spinner so that it shows the names in the spinner array resources
         //
@@ -170,6 +171,34 @@ TextModActivity extends ActionBarActivity {
             if(buttonSelection == R.id.clear)
             {
                 editText.setText(" ");
+            }
+
+            if(buttonSelection == R.id.Alternate)
+            {
+                String text2 = (String)editText.getText().toString();
+                int i = text2.length();
+                char[] charArray = text2.toCharArray();
+                int j;
+                for(j = 0;j<i; j++)
+                {
+                    if(j%2 == 0)
+                    {
+                        String temp = ""+charArray[j];
+                        temp = temp.toLowerCase();
+                        char[] tempCharArr = temp.toCharArray();
+                        charArray[j] = tempCharArr[0];
+
+                    }
+                    else if(j%2 == 1)
+                    {
+                        String temp = ""+charArray[j];
+                        temp = temp.toUpperCase();
+                        char[] tempCharArr = temp.toCharArray();
+                        charArray[j] = tempCharArr[0];
+                    }
+                }
+                String a = new String(charArray);
+                editText.setText(a);
             }
 
 

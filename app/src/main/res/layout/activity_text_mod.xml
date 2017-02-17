@@ -79,8 +79,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/upper_button_text"
-            android:id="@+id/upper"
+            android:text="Alternate"
+            android:id="@+id/Alternate"
             android:textSize="@dimen/button_font_size"
             android:textColor="@color/button_text_color"
             android:background="@color/button_color" />
